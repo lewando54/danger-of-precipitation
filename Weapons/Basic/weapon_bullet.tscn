@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba832r7cf2uak"]
+
+[ext_resource type="Texture2D" uid="uid://b5a3bxvdg11uq" path="res://Weapons/Basic/basic_weapon_bullet_sprite.png" id="1_rjg51"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5tyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rjg51")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Basic_weapon_bullet" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b5tyi")

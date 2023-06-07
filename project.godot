@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Danger Of Precipitation"
+run/main_scene="res://Player.tscn"
+config/features=PackedStringArray("4.0", "Mobile")
+boot_splash/bg_color=Color(0.290196, 0, 0.0431373, 1)
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
+
+[editor]
+
+movie_writer/disable_vsync=true
+
+[rendering]
+
+renderer/rendering_method="mobile"
