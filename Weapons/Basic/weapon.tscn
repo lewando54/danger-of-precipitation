@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgmgh7ysdg74b"]
+[gd_scene load_steps=5 format=3 uid="uid://cgmgh7ysdg74b"]
 
 [ext_resource type="Texture2D" uid="uid://cdily4w10boid" path="res://Weapons/Basic/basic_weapon_sprite.png" id="1_xf8jg"]
+[ext_resource type="PackedScene" uid="uid://ba832r7cf2uak" path="res://Weapons/Basic/weapon_bullet.tscn" id="2_hb1k1"]
 [ext_resource type="Script" path="res://Weapons/Basic/weapon.gd" id="2_i1c3t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8muik"]
@@ -16,8 +17,13 @@ animations = [{
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("2_i1c3t")
+bullet = ExtResource("2_hb1k1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(115, 7.62939e-06)
 scale = Vector2(3.78125, 3.78125)
 sprite_frames = SubResource("SpriteFrames_8muik")
+
+[node name="BulletSpawner" type="Marker2D" parent="."]
+position = Vector2(169, -5.68434e-14)
+scale = Vector2(1, 1)

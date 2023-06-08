@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba832r7cf2uak"]
+[gd_scene load_steps=5 format=3 uid="uid://ba832r7cf2uak"]
 
-[ext_resource type="Texture2D" uid="uid://b5a3bxvdg11uq" path="res://Weapons/Basic/basic_weapon_bullet_sprite.png" id="1_rjg51"]
+[ext_resource type="Script" path="res://Weapons/Basic/weapon_bullet.gd" id="1_ppa4u"]
+[ext_resource type="Texture2D" uid="uid://ch6q40pcpwny5" path="res://Weapons/Basic/basic_weapon_bullet_sprite.png" id="1_rjg51"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b5tyi"]
 animations = [{
@@ -13,7 +14,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Basic_weapon_bullet" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrhpt"]
+size = Vector2(21, 12)
+
+[node name="Basic_weapon_bullet" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 4
+gravity_scale = 0.0
+script = ExtResource("1_ppa4u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_b5tyi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_lrhpt")
