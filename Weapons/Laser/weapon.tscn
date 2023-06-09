@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bacli65hddco6"]
+
+[ext_resource type="Script" path="res://Weapons/Laser/weapon.gd" id="1_u807r"]
+[ext_resource type="PackedScene" uid="uid://hn6l6x6ch5lo" path="res://Weapons/Laser/weapon_bullet.tscn" id="2_53aqo"]
+[ext_resource type="Texture2D" uid="uid://de2fww7w6o7qa" path="res://Weapons/Laser/laser_weapon_sprite.png" id="3_5ytjn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8muik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5ytjn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Weapon" type="Node2D" node_paths=PackedStringArray("bullet_spawners")]
+script = ExtResource("1_u807r")
+bullet = ExtResource("2_53aqo")
+bullet_spawners = [NodePath("BulletSpawner"), NodePath("BulletSpawner2"), NodePath("BulletSpawner3"), NodePath("BulletSpawner4"), NodePath("BulletSpawner5")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(115, 7.62939e-06)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_8muik")
+
+[node name="BulletSpawner" type="Marker2D" parent="."]
+position = Vector2(193, 0)
+
+[node name="BulletSpawner2" type="Marker2D" parent="."]
+position = Vector2(192, -9)
+rotation = -0.174533
+
+[node name="BulletSpawner3" type="Marker2D" parent="."]
+position = Vector2(188, -19)
+rotation = -0.349066
+
+[node name="BulletSpawner4" type="Marker2D" parent="."]
+position = Vector2(189, 20)
+rotation = 0.349066
+
+[node name="BulletSpawner5" type="Marker2D" parent="."]
+position = Vector2(192, 9)
+rotation = 0.174533

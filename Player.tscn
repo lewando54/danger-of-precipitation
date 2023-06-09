@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bex1vphko6l24"]
+[gd_scene load_steps=7 format=3 uid="uid://bex1vphko6l24"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_7vjqj"]
 [ext_resource type="Texture2D" uid="uid://b3mc3p7alof5m" path="res://icon.svg" id="1_u4f3p"]
+[ext_resource type="PackedScene" uid="uid://cgmgh7ysdg74b" path="res://Weapons/Basic/weapon.tscn" id="2_yu0up"]
+[ext_resource type="PackedScene" uid="uid://bacli65hddco6" path="res://Weapons/Laser/weapon.tscn" id="3_3c3kg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_taij3"]
 animations = [{
@@ -21,6 +23,7 @@ size = Vector2(128, 128)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_7vjqj")
+weapons = Array[PackedScene]([ExtResource("3_3c3kg"), ExtResource("2_yu0up")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_taij3")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://hn6l6x6ch5lo"]
+
+[ext_resource type="Script" path="res://Weapons/Basic/weapon_bullet.gd" id="1_51nbp"]
+[ext_resource type="Texture2D" uid="uid://cfe3q12jtkmop" path="res://Weapons/Laser/laser_weapon_bullet_sprite.png" id="2_mchp8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5tyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mchp8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrhpt"]
+size = Vector2(74, 21)
+
+[node name="Basic_weapon_bullet" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 4
+gravity_scale = 0.0
+script = ExtResource("1_51nbp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_b5tyi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_lrhpt")

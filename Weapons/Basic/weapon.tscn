@@ -15,9 +15,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Weapon" type="Node2D"]
+[node name="Weapon" type="Node2D" node_paths=PackedStringArray("bullet_spawners")]
 script = ExtResource("2_i1c3t")
+shoot_speed = 0.25
 bullet = ExtResource("2_hb1k1")
+bullet_spawners = [NodePath("BulletSpawner")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(115, 7.62939e-06)
@@ -26,4 +28,3 @@ sprite_frames = SubResource("SpriteFrames_8muik")
 
 [node name="BulletSpawner" type="Marker2D" parent="."]
 position = Vector2(169, -5.68434e-14)
-scale = Vector2(1, 1)
