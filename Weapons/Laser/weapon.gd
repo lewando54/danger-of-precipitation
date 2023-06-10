@@ -20,6 +20,7 @@ func _ready():
 	timer.wait_time = shoot_speed
 	timer.one_shot = true
 	timer.timeout.connect(_on_timer_timeout)
+	$AnimatedSprite2D.play("loaded")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,6 +42,7 @@ func _on_player_shot():
 			var bullet_instance = bullet.instantiate()
 			bullet_instance.global_transform = spawner.global_transform
 			get_tree().root.add_child(bullet_instance)
+		$AnimatedSprite2D.play("reloading")
 		can_shoot = false
 		
 	if timer.is_stopped():
@@ -48,3 +50,4 @@ func _on_player_shot():
 	
 func _on_timer_timeout():
 	can_shoot = true
+	$AnimatedSprite2D.play("loaded")
